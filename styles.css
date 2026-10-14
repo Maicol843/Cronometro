@@ -1,12 +1,12 @@
 /* 
-TIEMPO
+BOTONES
 
-En el archivo CSS, selecciona la clase stopwatch-container y añade lo siguiente:
-1. alineación de texto al centro
-Selecciona el id stopwatch y añade lo siguiente:
-2. tamaño de fuente de tu elección, ¡hazlo más grande!
-3. margen inferior, que no sea el predeterminado
-4. bonus: color, borde y más de tu elección
+¡Estiliza los botones como desees! Estos son algunos cambios requeridos para la etiqueta button:
+
+1. cursor establecido en pointer
+2. padding establecido en cualquier valor que no sea el predeterminado
+3. color de fondo de tu elección, no el predeterminado
+4. extra: ¡efecto hover!
 */
 
 body{
@@ -28,4 +28,21 @@ body{
     margin-bottom: 10px;
     color: white;
     border: none;
+}
+
+#startStop, #reset{
+    cursor: pointer;
+    padding: 10px 30px;
+    background-color:brown;
+    color: white;
+    font-size: 20px;
+    border: 1px solid brown;
+    border-radius: 5px;
+}
+
+#startStop:hover, #reset:hover{
+    color: brown;
+    background-color: white;
+    border: 1px solid white;
+    font-weight: bold;
 }
