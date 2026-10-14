@@ -1,7 +1,9 @@
 <!-- 
-PARRAFO
+BOTONES
 
-Dentro del contenedor, añade una etiqueta de párrafo con el texto 00:00:00 y el atributo id de stopwatch.
+Debajo del párrafo que acabas de añadir, añade un div con el atributo class buttons y dentro de él, añade dos botones:
+1. Botón con el texto Start y el id startStop
+2. Botón con el texto Reset y el id reset
 -->
 <!DOCTYPE html>
 <html>
@@ -13,8 +15,12 @@ Dentro del contenedor, añade una etiqueta de párrafo con el texto 00:00:00 y e
         
         <div class="stopwatch-container">
             <p id="stopwatch">00:00:00</p>
+            <div class="buttons">
+                <button id="startStop">Start</button>
+                <button id="reset">Reset</button>
+            </div>
         </div>
-        
+
         <!-------------------------->
         <script src="script.js"></script>
     </body>
