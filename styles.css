@@ -1,1 +1,23 @@
-/* Write CSS code here */
+/* 
+BODY
+
+Pasemos a la parte de CSS (estilos).
+Se te pedirán algunos estilos específicos, pero también tienes mucho espacio para usar tu mente creativa, ¡úsala!
+
+En el archivo CSS, selecciona la etiqueta body y añade lo siguiente:
+1. familia de fuentes de tu elección
+2. margen establecido en 0
+3. fondo de tu elección, no el predeterminado
+4. altura de 100vh
+5. centra todo usando flex box
+*/
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0px;
+    background-color:tomato;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
