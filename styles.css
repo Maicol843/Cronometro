@@ -1,15 +1,12 @@
 /* 
-BODY
+TIEMPO
 
-Pasemos a la parte de CSS (estilos).
-Se te pedirán algunos estilos específicos, pero también tienes mucho espacio para usar tu mente creativa, ¡úsala!
-
-En el archivo CSS, selecciona la etiqueta body y añade lo siguiente:
-1. familia de fuentes de tu elección
-2. margen establecido en 0
-3. fondo de tu elección, no el predeterminado
-4. altura de 100vh
-5. centra todo usando flex box
+En el archivo CSS, selecciona la clase stopwatch-container y añade lo siguiente:
+1. alineación de texto al centro
+Selecciona el id stopwatch y añade lo siguiente:
+2. tamaño de fuente de tu elección, ¡hazlo más grande!
+3. margen inferior, que no sea el predeterminado
+4. bonus: color, borde y más de tu elección
 */
 
 body{
@@ -20,4 +17,15 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.stopwatch-container{
+    text-align: center;
+}
+
+#stopwatch{
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: white;
+    border: none;
 }
