@@ -1,24 +1,11 @@
 /*
-CRONOMETRO FUNCIONAL
+REINICIAR
 
-Ahora, una vez que tenemos los botones de inicio y parada funcionando, ¡es hora de empezar a contar!
-Para contar, utilizaremos una función de JavaScript llamada setInterval:
-const interval = setInterval(func, milliseconds)
-La función recibe dos argumentos: una función y un número que representa milisegundos. La función se llama cada vez que transcurre el número de milisegundos proporcionado.
-Así que, por ejemplo:
-let count = 0
-function updateCount() {
-    count += 1;
-}
-const interval = setInterval(updateCount, 1000)
-En el ejemplo anterior, aumentamos la variable count en 1 cada segundo.
-Si quieres detener un intervalo, utiliza clearInterval con el valor de retorno de setInterval:
-const interval = setInterval(updateCount, 1000)
-clearInterval(interval)
-
-Agrega el siguiente soporte a tu archivo JS:
-- Una vez que se haga clic en el botón de inicio/parada, establece un intervalo que actualice el texto del cronómetro cada segundo en uno, asegúrate de que esté formateado correctamente.
-- Una vez que se haga clic en el botón de inicio/parada nuevamente, borra el intervalo en ejecución.
+Añadamos la última parte: el botón de reinicio.
+Una vez que se haga clic en el botón de reinicio, este debería:
+1. detener el intervalo (si existe)
+2. restablecer el tiempo de texto a 00:00:00
+3. cambiar el texto del botón de inicio/parada a Start
 */
 
 // Obtenemos los elementos del DOM
@@ -44,14 +31,14 @@ function formatTime(totalSecs) {
     return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
 }
 
-// Escuchador para el botón de inicio/parada
+// Escuchador de eventos para el botón de inicio/parada
 startStopButton.addEventListener('click', () => {
     if (isRunning) {
-        // Si está corriendo, lo detenemos limpiando el intervalo
+        // Si está corriendo, detenemos el intervalo
         clearInterval(intervalId);
         startStopButton.textContent = 'Start';
     } else {
-        // Si está detenido, iniciamos el intervalo que se ejecuta cada segundo
+        // Si está detenido, iniciamos el intervalo que actualiza cada segundo
         intervalId = setInterval(() => {
             totalSeconds++;
             stopwatchDisplay.textContent = formatTime(totalSeconds);
@@ -59,19 +46,21 @@ startStopButton.addEventListener('click', () => {
         startStopButton.textContent = 'Stop';
     }
     
-    // Alternamos el estado
+    // Alternamos el estado de ejecución
     isRunning = !isRunning;
 });
 
-// Escuchador para el botón de reinicio
+// Escuchador de eventos para el botón de reinicio
 resetButton.addEventListener('click', () => {
-    // Detenemos el intervalo si está activo
+    // 1. Detiene el intervalo si existe
     clearInterval(intervalId);
     intervalId = null;
     
-    // Reiniciamos variables y visualización
+    // 2. Restablece el estado y el texto del cronómetro a 00:00:00
     isRunning = false;
     totalSeconds = 0;
     stopwatchDisplay.textContent = '00:00:00';
+    
+    // 3. Cambia el texto del botón de inicio/parada de vuelta a Start
     startStopButton.textContent = 'Start';
 });
